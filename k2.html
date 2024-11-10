@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KKB Restaurant</title>
+    <link rel="stylesheet" href="stylek2.css">
+    <link rel="shortcut icon" type="image" href="./image/logo.png">
+    <!-- bootstrap links -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <!-- bootstrap links -->
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anek+Malayalam:wght@500&display=swap" rel="stylesheet">
+    <!-- fonts -->
+
+    <!-- icons -->
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <!-- icons -->
+
+    <!-- animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- animation -->
+</head>
+<body>
+    <div class="main-content"  data-aos="fade-down"
+    data-aos-easing="linear"
+    data-aos-duration="1500">      
+
+        <nav class="navbar navbar-expand-md" id="navbar-color"  data-aos="fade-down"
+        data-aos-easing="linear"
+        data-aos-duration="1500">   
+
+            <div class="container">
+            <!-- Brand -->
+            <a class="navbar-brand" href="#" id="logo"><img src="data:image/png;base64,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" alt="" width="30px"> KKB <span>Restaurant</span></a>
+          
+            <!-- Toggler/collapsibe Button -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+              <span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAbFBMVEX///8AAACYmJhkZGQ/Pz/6+vqpqani4uJ4eHjKysrc3NwzMzMaGhqkpKRCQkJ1dXWenp5WVlawsLDAwMBqamqLi4vp6el/f3+5ublTU1PU1NTx8fGXl5crKyvNzc1LS0sSEhIgICAvLy+Pj49df48DAAAChUlEQVR4nO3c3ZKiMBCGYaICjqKDCOLvurPe/z2uO84uNAQO1qSdSr3PaaoIXyEBK01HEQAAAAAAAAAAAAAAAAAAAAAAAAAAL7SoliYrt/bBH/OLUbGsFr4CVl9TXNP+WDzVifdQ+QlY/psg2/UCzjQDGvPuI+CqNcG6O/iuG9CYxH3A+Gd7gs69mGoHNFnsPOGbmKCUg7l6QvPmPKEMcZGD5cBpeJQ7TzgRx8/k4EY/4cR5wkQcv7PU1PoJ3S81cjE5y8FCP6Hlmfws8Us8yTG50Go4uA8YLVrH793me+2EXl7cmueF5aVJ+Xkx8G78rPTwOPzemv9DL9/V26t3tNsXxXFo8JhMNOSFh0UGAAAAAAAAAADgu4m31XSenOyDp6KeaigrT1trd9uvnV5rzdVqfEPMqcxTxibDoV+uM1cMeLfyEbBdMtQrK9O8gp/cFwxF0bI9QWcT9qQd0MzcBzyKCWo5mAych0fuN7rl73ApB5Xvwj/c34lncfzXV32d7af5hNFrqF5e6uMajt6H6kupMYMlIf9vbC3dqQf85T5gtG0dv/c8PA+eiide3mqaClPLO41qqb6PdebT3/K82lZjfdMMWPgJeP9vsa83Zd77FOFhl09nGtZl4b6KHQAAAAAAAAAA4NtJizwZrGQJ4Hv8xXpkbyuEngrNJrCl01YIfTHavU1u3cEgepsc2hN0dklj7YA++tPIHkOdixhEjyFZutYpnAuiT1T4vb7C79cme+51nhdB9NyLP0aOH0TfRLHUXLuDIfS+bJfJXnofJATRv7Qpz9tYvrjQ7UHbe6dyJb1ds+V84B5X7CNMsy8AAAAAAAAAAAAAAAAAAAAAAAAAwEv9BrghJ311jEU1AAAAAElFTkSuQmCC" alt=""></span>
+            </button>
+          
+            <!-- Navbar links -->
+            <div class="collapse navbar-collapse" id="collapsibleNavbar" >
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Dishes</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Menu</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Chefs</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Gallary</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Contact</a>
+                </li>
+              </ul>
+            </div>
+
+            <div id="btn"><a href="#"><button>Book a Table</button></a></div>
+
+        </div>
+          </nav>
+
+      
+
+          <!-- navbar end -->
+
+
+          <!-- home section -->
+          <section class="home" id="home" >
+
+            <div class="content">
+                <h3>Enjoy Your Healthy
+                    <br>Delicious Food
+                </h3>
+                <p>Savor every bite with our delicious food, crafted to delight your taste buds. <br> 
+                    Enjoy a flavorful journey with meals made to satisfy every craving!
+                </p>
+                <a href="#" class="btn">Order Now</a>
+                
+            </div>
+            <div class="img">
+                <img src="https://i.pinimg.com/474x/f2/46/a8/f246a86fac7ab2773ebc8ecefbce99ee.jpg" alt="" style="height: 400px;width: 500px;">
+            </div>
+          </section>
+          <!-- home section -->
+          
+    </div>
+    <!-- main content end -->
+
+
+
+
+    <!-- dishes content -->
+    <div class="container" id="dishe" data-aos="fade-up"
+    data-aos-duration="1500">
+        <h1 class="text-center">DISHES</h1>
+        <div class="row" style="margin-top: 50px;" data-aos="fade-up"
+     data-aos-duration="3000">
+            <div class="col-md-3 py-3 py-md-0">
+                <div class="card">
+                    <img src="https://i.pinimg.com/474x/25/fb/07/25fb07dcf454843c9af8fe29da3d0dbd.jpg" alt="">
+                    <div class="card-body">
+                        <h3 class="text-center">Best Salad</h3>
+                        <div class="star text-center">
+                         <i class="bx bxs-star checked"></i>
+                         <i class="bx bxs-star checked"></i>
+                         <i class="bx bxs-star checked"></i>
+                         <i class="bx bxs-star checked"></i>
+                         <i class="bx bxs-star checked"></i>
+                        </div>
+                        <h6>₹200.50 <span><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6VyknGLEGDqJUHMhtKPQgDmg-uohf_st3IA&s" alt="" width="20px"></span></h6>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 py-3 py-md-0">
+                <div class="card">
+                    <img src="https://i.pinimg.com/enabled_lo/474x/65/3a/1a/653a1ab8cfb7e7bdd0467edd85920239.jpg" alt="" style="height: 170px;" >
+                    <div class="card-body">
+                        <h3 class="text-center">Chicken Chow</h3>
+                        <div class="star text-center">
+                         <i class="bx bxs-star checked"></i>
+                         <i class="bx bxs-star checked"></i>
+                         <i class="bx bxs-star checked"></i>
+                         <i class="bx bxs-star checked"></i>
+                         <i class="bx bxs-star checked"></i>
+                        </div>
+                        <h6>₹250.30 <span><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6VyknGLEGDqJUHMhtKPQgDmg-uohf_st3IA&s" alt="" width="20px"></span></h6>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 py-3 py-md-0">
+                <div class="card">
+                    <img src="https://i.pinimg.com/474x/b1/28/ba/b128ba8dd7491201b78fa9c25980bf08.jpg" alt=""style="height: 170px;" >
+                    <div class="card-body">
+                        <h3 class="text-center">Grilled Chicken</h3>
+                        <div class="star text-center">
+                         <i class="bx bxs-star checked"></i>
+                         <i class="bx bxs-star checked"></i>
+                         <i class="bx bxs-star checked"></i>
+                         <i class="bx bxs-star checked"></i>
+                         <i class="bx bxs-star checked"></i>
+                        </div>
+                        <h6>₹450.50 <span><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6VyknGLEGDqJUHMhtKPQgDmg-uohf_st3IA&s" alt="" width="20px"></span></h6>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 py-3 py-md-0">
+                <div class="card">
+                    <img src="https://i.pinimg.com/enabled_lo/474x/c3/82/53/c3825394eb2358a2b708810eb668a0c7.jpg" alt="" style="height: 170px;">
+                    <div class="card-body">
+                        <h3 class="text-center">Chicken Dishe</h3>
+                        <div class="star text-center">
+                         <i class="bx bxs-star checked"></i>
+                         <i class="bx bxs-star checked"></i>
+                         <i class="bx bxs-star checked"></i>
+                         <i class="bx bxs-star checked"></i>
+                         <i class="bx bxs-star checked"></i>
+                        </div>
+                        <h6>₹300.20 <span><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6VyknGLEGDqJUHMhtKPQgDmg-uohf_st3IA&s" alt="" width="20px"></span></h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+        <div class="row" style="margin-top: 50px;" data-aos="fade-up"
+        data-aos-duration="1500">
+            <div class="col-md-3 py-3 py-md-0">
+                <div class="card">
+                    <img src="https://i.pinimg.com/474x/7f/29/34/7f2934c6ea19ec598b1f152461cd77d9.jpg" alt="" style="height: 170px;">
+                    <div class="card-body">
+                        <h3 class="text-center">Fresh Noodles</h3>
+                        <div class="star text-center">
+                         <i class="bx bxs-star checked"></i>
+                         <i class="bx bxs-star checked"></i>
+                         <i class="bx bxs-star checked"></i>
+                         <i class="bx bxs-star checked"></i>
+                         <i class="bx bxs-star checked"></i>
+                        </div>
+                        <h6>₹500.10 <span><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6VyknGLEGDqJUHMhtKPQgDmg-uohf_st3IA&s" alt="" width="20px"></span></h6>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 py-3 py-md-0">
+                <div class="card">
+                    <img src="https://i.pinimg.com/474x/f7/7d/6c/f77d6c01eb9fb2d260426199e0814c6d.jpg" alt="" style="height: 170px;">
+                    <div class="card-body">
+                        <h3 class="text-center">Best Pasta</h3>
+                        <div class="star text-center">
+                         <i class="bx bxs-star checked"></i>
+                         <i class="bx bxs-star checked"></i>
+                         <i class="bx bxs-star checked"></i>
+                         <i class="bx bxs-star checked"></i>
+                         <i class="bx bxs-star checked"></i>
+                        </div>
+                        <h6>₹500.10 <span><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6VyknGLEGDqJUHMhtKPQgDmg-uohf_st3IA&s" alt="" width="20px"></span></h6>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 py-3 py-md-0">
+                <div class="card">
+                    <img src="https://i.pinimg.com/474x/92/7d/b0/927db0418c9ab4b735ce36fe19d6b65c.jpg" alt="" style="height: 170px;">
+                    <div class="card-body">
+                        <h3 class="text-center">Steaks Vegetable</h3>
+                        <div class="star text-center">
+                         <i class="bx bxs-star checked"></i>
+                         <i class="bx bxs-star checked"></i>
+                         <i class="bx bxs-star checked"></i>
+                         <i class="bx bxs-star checked"></i>
+                         <i class="bx bxs-star checked"></i>
+                        </div>
+                        <h6>₹200.50 <span><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6VyknGLEGDqJUHMhtKPQgDmg-uohf_st3IA&s" alt="" width="20px"></span></h6>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 py-3 py-md-0">
+                <div class="card">
+                    <img src="https://i.pinimg.com/enabled_lo/474x/0a/12/44/0a12449121e3a41017113840b0f4dfb4.jpg" alt="" style="height: 170px;">
+                    <div class="card-body">
+                        <h3 class="text-center">White Fish</h3>
+                        <div class="star text-center">
+                         <i class="bx bxs-star checked"></i>
+                         <i class="bx bxs-star checked"></i>
+                         <i class="bx bxs-star checked"></i>
+                         <i class="bx bxs-star checked"></i>
+                         <i class="bx bxs-star checked"></i>
+                        </div>
+                        <h6>₹500.50 <span><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6VyknGLEGDqJUHMhtKPQgDmg-uohf_st3IA&s" alt="" width="20px"></span></h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- dishes content -->
+
+
+
+
+    <!-- menu section -->
+    <div class="container" id="menu" data-aos="fade-up"
+    data-aos-duration="1500">
+        <h1 class="text-center">MENU</h1>
+        <div class="row" style="margin-top: 50px;">
+            <div class="col-md-6 py-3 py-md-0">
+                <p style="margin-top: 30px;"><img src="https://i.pinimg.com/enabled_lo/474x/71/02/71/7102718b3c7bb57a90e007ccc0e0c76e.jpg" alt="" width="50px"><span>Greek salad:</span>Greek salad has tomato, cucumber, olive, onion, and feta.</p>
+                <p style="margin-top: 30px;"><img src="https://i.pinimg.com/474x/4f/46/3c/4f463c073a93def8564bf9ef077a2425.jpg" alt="" width="50px"><span>Steaks Vegetable:</span>Steak pairs with sautéed or roasted veggies.</p>
+                <p style="margin-top: 30px;"><img src="https://i.pinimg.com/474x/6d/70/d8/6d70d86ec957898d1ea281f4420487a2.jpg" alt="" width="50px"><span>Chicken Chow:</span>Chicken chow combines chicken, veggies, and noodles.</p>
+                <p style="margin-top: 30px;"><img src="https://i.pinimg.com/enabled_lo/474x/87/71/88/8771880bfcb96e6e20fd7c49bc6cd9b1.jpg" alt="" width="50px"><span>Pasta:</span>Pasta is a dish of noodles with sauce, vegetables, or meat.</p>
+            </div>
+            <div class="col-md-6 py-3 py-md-0">
+                <p style="margin-top: 30px;"><img src="https://i.pinimg.com/enabled_lo/474x/87/78/71/8778715631d8ee244f33111ea42627d7.jpg" alt="" width="50px"><span>Caesar:</span>Caesar salad has romaine, croutons, parmesan, and dressing.</p>
+                <p style="margin-top: 30px;"><img src="https://i.pinimg.com/474x/40/85/9f/40859fb904a8a160e5730bce077299e3.jpg" alt="" width="50px"><span>Bread Barrel:</span>Bread Barrel offers a variety of freshly baked breads and pastries.</p>
+                <p style="margin-top: 30px;"><img src="https://i.pinimg.com/474x/7d/a9/50/7da95097b66d3069e25c9b4067fcb7c8.jpg" alt="" width="50px"><span>Cake</span>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                <p style="margin-top: 30px;"><img src="https://i.pinimg.com/474x/86/3f/b4/863fb4ad56a1adc9ee2c85913ec0e1d1.jpg" alt="" width="50px"><span>Noodles</span>Lorem ipsum dolor sit, amet consectetur adipisicing.</p>
+            </div>
+        </div>
+    </div>
+    <!-- menu section -->
+
+    <!-- .chefs -->
+    <div class="container" id="chefs" data-aos="fade-up"
+    data-aos-duration="1500">
+        <h1 class="text-center">CHEF</h1>
+        <div class="row">
+            <div class="col-md-4 py-3 py-md-0">
+                <div class="card">
+                    <img src="https://i.pinimg.com/enabled_lo/474x/bc/a3/25/bca3255f92ffeb82718ab2d3936e4ba3.jpg" alt="">
+                </div>
+            </div>
+            <div class="col-md-8 py-3 py-md-0">
+                <h2>Mr Chef</h2>
+                <p>
+
+                    Chef Alex brings over a decade of culinary experience to Chicken Delights.  
+                    Passionate about chicken, he creates innovative recipes that highlight its versatility.  
+                    Trained in classic French cooking, he infuses global flavors into every dish.  
+                    Chef Alex believes in using fresh, locally sourced ingredients for quality and taste.  
+                    His commitment to culinary excellence has earned him numerous industry awards.  
+                    Known for his engaging cooking classes, he enjoys sharing his knowledge with aspiring chefs.  
+                    Outside the kitchen, he loves exploring new cuisines and flavors.  
+                    Chef Alex emphasizes the importance of presentation and creativity in cooking.  
+                    He is dedicated to creating a welcoming dining experience for all guests.  
+                    His goal is to make every meal memorable through delicious food.  
+                    With a focus on customer satisfaction, he strives for excellence in every dish.  
+                    Chef Alex values feedback and continuously seeks to improve his menu.  
+                    He believes in fostering a strong team environment in the kitchen.  
+                    Join him on this flavorful journey at Chicken Delights!  
+                    Experience the passion and creativity he brings to each plate.  
+                    Discover the delicious world of chicken through Chef Alex’s eyes!</p>
+            </div>
+        </div>
+    </div>
+    <!-- .chefs -->
+    
+    <!-- gallary -->
+    <div class="container" id="gallary" data-aos="fade-up"
+    data-aos-duration="1500">
+        <h1 class="text-center">GALLARY</h1>
+        <div class="row">
+            <div class="col-md-4 py-3 py-md-0">
+                <div class="card">
+                    <img src="https://i.pinimg.com/474x/17/45/1d/17451d2eebd9696b96dd37b319f7c385.jpg" alt="">
+                </div>
+            </div>
+            <div class="col-md-4 py-3 py-md-0">
+                <div class="card">
+                    <img src="https://i.pinimg.com/474x/95/4b/c4/954bc4815ba3fe8dc396ce708fc3f02e.jpg" alt="" style="height: 235px;">
+                </div>
+            </div>
+            <div class="col-md-4 py-3 py-md-0">
+                <div class="card">
+                    <img src="https://i.pinimg.com/474x/f5/7f/11/f57f11617a3a04402c07f0317cd2b19a.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- gallary -->
+
+    <!-- book a table -->
+    <div class="container" id="book-table" data-aos="fade-up"
+    data-aos-duration="1500">
+        <h1 class="text-center">BOOK A TABLE</h1>
+        <div class="row">
+            <div class="col-md-4 py-3 py-md-0">
+                <input type="text" class="form-control form-control" placeholder="Name">
+                <input type="date" class="form-control form-control" placeholder="Date">
+            </div>
+            <div class="col-md-4 py-3 py-md-0">
+                <input type="email" class="form-control form-control" placeholder="Email">
+                <input type="time" class="form-control form-control" placeholder="Time">
+            </div>
+            <div class="col-md-4 py-3 py-md-0">
+                <input type="number" class="form-control form-control" placeholder="Phone">
+                <input type="text" class="form-control form-control" placeholder="# Of People">
+            </div>
+        </div>
+
+        <div class="form-group" style="margin-top: 30px;">
+            <textarea class="form-control" rows="5" id="comment" placeholder="Message"></textarea>
+        </div>
+        <div id="btntable" class="text-center"><button>Book a Table</button></div>
+    </div>
+    <!-- book a table -->
+
+    <!-- about us -->
+    <div class="container" id="about" data-aos="fade-up"
+    data-aos-duration="1500">
+      <h1 class="text-center">ABOUT US</h1>
+      <div class="row">
+        <div class="col-md-6 py-3 py-md-0">
+            <div class="card">
+                <img src="https://i.pinimg.com/474x/08/69/36/08693680360fdadfefdab2e239aeb28f.jpg" alt="" style="height: 350px;width: 550px;">
+            </div>
+        </div>
+        <div class="col-md-6 py-3 py-md-0">
+            <p>
+                Chicken Delights is your ultimate destination for delicious chicken recipes.  
+                Our passion for cooking and love for chicken inspire mouthwatering dishes.  
+                We believe in using the freshest ingredients to ensure flavorful meals.  
+                Every recipe is crafted to be easy and satisfying for all skill levels.  
+                Whether you’re looking for quick weeknight dinners or special occasion feasts,  
+                we have recipes to suit every palate and preference.  
+                Our collection includes classic favorites and innovative new ideas.  
+                We focus on healthy options without sacrificing taste.  
+                Our community of chicken enthusiasts shares valuable tips and tricks.  
+                We aim to inspire culinary creativity in your kitchen.  
+                With every dish, we hope to bring joy to your dining experience.  
+                Join us to discover the versatility of chicken in various cuisines.  
+                Let’s embark on this flavorful journey together!  
+                Together, we can make every meal memorable.</p>
+            <div id="btnrd"><button>Read More...</button></div>
+        </div>
+      </div>
+    </div>
+    <!-- about us -->
+    
+    <!-- contact us -->
+    <div class="container" id="contact" data-aos="fade-up"
+    data-aos-duration="1500">
+        <h1 class="text-center">
+            CONTACT US
+        </h1>
+        <div class="row">
+            <div class="col-md-4 py-3 py-md-0">
+                <input type="text" class="form-control form-control" placeholder="Name">
+                
+            </div>
+            <div class="col-md-4 py-3 py-md-0">
+                <input type="email" class="form-control form-control" placeholder="Email">
+                
+            </div>
+            <div class="col-md-4 py-3 py-md-0">
+                <input type="number" class="form-control form-control" placeholder="Phone">
+                
+            </div>
+        </div>
+        
+        <div class="form-group" style="margin-top: 30px;">
+            <textarea class="form-control" rows="5" id="comment" placeholder="Message"></textarea>
+        </div>
+        <div id="btntable" class="text-center"><button>Message</button></div>
+
+    </div>
+    <!-- contact us -->
+
+    <!-- footer -->
+    <footer id="footer" style="margin-top: 50px;" data-aos="fade-up"
+    data-aos-duration="1500">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 footer-contact">
+                        <h3>KKB Restaurant</h3>
+                        <p>
+                            Tamilnadu <br><br>
+                            Bangalore <br><br>
+                            Hyderabad <br><br>
+                        </p>
+                        <strong>Phone: <strong>+91 1234567892</strong></strong><br>
+                        <strong>Email: <strong>kkbrestaurant@gmail.com</strong></strong>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 footer-links">
+                       <h4>Usefull Links</h4>
+                       <ul>
+                        <li><i class="bx bx-chevron-right"><a href="#">Home</a></i></li>
+                        <li><i class="bx bx-chevron-right"><a href="#">About</a></i></li>
+                        <li><i class="bx bx-chevron-right"><a href="#">Contact</a></i></li>
+                        <li><i class="bx bx-chevron-right"><a href="#">Services</a></i></li>
+                        <li><i class="bx bx-chevron-right"><a href="#">Privacy Policay</a></i></li>
+                       </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-6 footer-links">
+                        <h4>Our Services</h4>
+                        <p>Chicken Delights serves delicious chicken for dine-in, takeout, and catering with excellent service.</p>
+                            <ul>
+                                <li><i class="bx bx-chevron-right"><a href="#">Dishes</a></i></li>
+                                <li><i class="bx bx-chevron-right"><a href="#">Chicken</a></i></li>
+                                <li><i class="bx bx-chevron-right"><a href="#">Fish</a></i></li>
+                                <li><i class="bx bx-chevron-right"><a href="#">Burger</a></i></li>
+                                <li><i class="bx bx-chevron-right"><a href="#">Pizza</a></i></li>
+                            </ul>
+                        </p>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 footer-links">
+                        <h4>Our Socail Network</h4>
+                        <p>Connect with us on social media to stay updated on our latest chicken dishes, promotions, and events!</p>
+                        <div class="socail-links mt-3">
+                            <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                            <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                            <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                            <a href="#" class="google-plus"><i class="bx bxl-google-plus"></i></a>
+                            <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container py-4">
+            <div class="copyright">
+                &copy; Copyright <strong><span>KKB Restaurant</span></strong>. All Rights Reserved
+            </div>
+            <div class="credits">
+                Designed By <a href="#">KKB coding</a>
+            </div>
+        </div>
+    </footer>
+    <!-- footer -->
+
+
+
+    <a href="#" class="arrow"><i><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRslI5zu6K9eBToq-fGFjTcgZka1eVFQ_zwNQ&s" alt="" width="50px"></i></a>
+
+
+
+
+
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+      </script>
+      
+</body>
+</html>
